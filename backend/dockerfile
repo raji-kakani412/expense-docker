@@ -1,6 +1,6 @@
 FROM node:20 AS node-build
 WORKDIR /opt/server
-COPY package.json . && \
+COPY package.json . \ && 
     *.js .
 RUN npm install
 
