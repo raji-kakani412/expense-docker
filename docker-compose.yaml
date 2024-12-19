@@ -12,7 +12,7 @@ services: # docker run command
   backend:
     image: rajikakani412/backend:v1
     container_name: backend
-    command: sh -c "sleep 10 && node /opt/server/index.js"
+    command: sh -c "sleep 60 && node /opt/server/index.js"
     # this shell command is used to let the backend sleep for 5s so that it can wait for mysql until it is up and running
     depends_on: 
     - mysql
