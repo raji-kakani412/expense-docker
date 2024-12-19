@@ -5,19 +5,19 @@ volumes:
   mysql: # docker volume create mysql
 services: # docker run command
   mysql:
-    image: rajikakani/mysql:v1
+    image: rajikakani412/mysql:v1
     container_name: mysql # --name mysql
     volumes:
     - mysql:/var/lib/mysql #-v mysql:/var/lib/mysql
   backend:
-    image: rajikakani/backend:v1
+    image: rajikakani412/backend:v1
     container_name: backend
     command: sh -c "sleep 10 && node /opt/server/index.js"
     # this shell command is used to let the backend sleep for 5s so that it can wait for mysql until it is up and running
     depends_on: 
     - mysql
   frontend:
-    image: rajikakani/frontend:v1
+    image: rajikakani412/frontend:v1
     container_name: frontend
     ports:
     - 80:80
